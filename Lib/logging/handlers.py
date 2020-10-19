@@ -202,10 +202,10 @@ class TimedRotatingFileHandler(BaseRotatingHandler):
     If backupCount is > 0, when rollover is done, no more than backupCount
     files are kept - the oldest ones are deleted.
     """
-    def __init__(self, filename, when='h', interval=1, backupCount=0,
+    def __init__(self, filename, mode='a', when='h', interval=1, backupCount=0,
                  encoding=None, delay=False, utc=False, atTime=None,
                  errors=None):
-        BaseRotatingHandler.__init__(self, filename, 'a', encoding=encoding,
+        BaseRotatingHandler.__init__(self, filename, mode, encoding=encoding,
                                      delay=delay, errors=errors)
         self.when = when.upper()
         self.backupCount = backupCount
